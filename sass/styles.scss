@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+
+
+
+
+/* Dark Mode স্টাইল */
+body.dark-mode {
+  background-color: #121212; /* বা আপনার পছন্দসই ডার্ক ব্যাকগ্রাউন্ড */
+  color: #eee;
+}
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-image: url('../assets/desktop/bg-pattern-header.svg');
+    background-repeat: no-repeat;
+    background-size: cover; /* পুরো ইমেজ যেনো স্ক্রিনে ফিট থাকে */
+    height: 220px;
+}
+.toggle-switch {
+    position: relative;
+    width: 52px;
+    height: 24px;
+    top: 4px;
+  
+    input {
+      // ইনপুট ফিল্ডকে লুকিয়ে রাখা
+      opacity: 0;
+      width: 0;
+      height: 0;
+  
+      &:checked + .slider {
+        background-color: #fff; // অন-স্টেট কালার
+  
+        &:before {
+          transform: translateX(26px); // সুইচ নড়াচড়া
+        }
+      }
+    }
+  
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: white;
+      transition: background-color 0.4s;
+  
+      // সুইচের বাটনের মতো গোলাকার অংশ
+      &:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 3px;
+        bottom: 4px;
+        background-color: #5964E0;
+        transition: transform 0.4s;
+        border-radius: 50%;
+      }
+      // বর্ডার-রেডিয়াস দিয়ে পুরো সুইচটিকে ওভাল করা (ঐচ্ছিক)
+      border-radius: 34px;
+    }
+  }
+.header-icon {
+    i {
+        font-size: 20px;
+        color: white;
+    }
+    display: flex;
+    column-gap: 10px;
+}
+.filter-container {
+  .search {
+    display: flex;
+    .search-icon {
+      background-color: #fff;
+      width: 60px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px 0 0 6px;
+      i{
+        color: #5964E0;
+        font-size: 20px;
+      }
+    }
+    .search-input {
+      input {
+        height: 50px;
+        border: none;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
